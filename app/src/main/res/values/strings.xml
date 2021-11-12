@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="degree_symbol">°</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="humidity">Humidity</string>
+    <string name="description">Description</string>
+    <string name="city_name">City Name</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="max_temp">Max temp</string>
+    <string name="min_temp">Min temp</string>
+    <string name="c">C</string>
+</resources>

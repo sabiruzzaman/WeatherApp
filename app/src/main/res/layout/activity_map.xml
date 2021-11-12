@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".map.MapActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewId"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:cardBackgroundColor="?colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/backImgId"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/colorAccent"
+                map:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/backImgId"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <fragment
+        android:id="@+id/mapFragmentId"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="-30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintBottom_toTopOf="@+id/bottomCardViewId"
+        map:layout_constraintTop_toBottomOf="@+id/cardViewId" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomCardViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        map:cardBackgroundColor="@color/colorAccent"
+        map:cardCornerRadius="15dp"
+        map:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/cityNameTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/city_name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                map:layout_constraintStart_toStartOf="parent"
+                map:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/descriptionTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/description"
+                android:textSize="14sp"
+
+                app:layout_constraintStart_toStartOf="@+id/cityNameTvId"
+                map:layout_constraintTop_toBottomOf="@+id/cityNameTvId" />
+
+            <TextView
+                android:id="@+id/humidityTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/humidity"
+                android:textSize="14sp"
+                map:layout_constraintStart_toStartOf="@+id/descriptionTvId"
+                map:layout_constraintTop_toBottomOf="@+id/descriptionTvId" />
+
+            <TextView
+                android:id="@+id/speedTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/wind_speed"
+                android:textSize="14sp"
+                map:layout_constraintStart_toStartOf="@+id/humidityTvId"
+                map:layout_constraintTop_toBottomOf="@+id/humidityTvId" />
+
+            <TextView
+                android:id="@+id/maxTempTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/max_temp"
+                android:textSize="14sp"
+                map:layout_constraintStart_toStartOf="@+id/speedTvId"
+                map:layout_constraintTop_toBottomOf="@+id/speedTvId" />
+
+            <TextView
+                android:id="@+id/minTempTvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/min_temp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                map:layout_constraintStart_toStartOf="@+id/maxTempTvId"
+                map:layout_constraintTop_toBottomOf="@+id/maxTempTvId" />
+
+
+            <LinearLayout
+                android:id="@+id/cloudInfoLayoutId"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/minTempTvId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cityNameTvId">
+
+                <TextView
+                    android:id="@+id/temperatureTvId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25c"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    app:layout_constraintBottom_toTopOf="@+id/cloudImgId"
+                    app:layout_constraintTop_toTopOf="@+id/cityNameTvId" />
+
+                <ImageView
+                    android:id="@+id/cloudImgId"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/cloud"
+                    app:layout_constraintBottom_toBottomOf="@+id/minTempTvId"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/temperature"
+                    app:tint="?colorPrimary" />
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+
+    Package name:
+    com.babuland.weather
+
+    SHA-1 certificate fingerprint:
+    EC:D6:B9:96:D2:09:B2:E9:2C:AC:19:62:3B:AD:2B:74:06:40:FE:D6
+
+    <string name="google_map_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCNsmZNXqBCKG00U2X2I7H8StJ5YIt9k8s</string>
+
+</resources>
